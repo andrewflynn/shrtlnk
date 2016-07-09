@@ -1,20 +1,17 @@
 {
-  // Required
   "manifest_version": 2,
   "name": "shrtlnk",
   "version": "0.1",
   "permissions": [
-    "activeTab", // https://developer.chrome.com/extensions/activeTab
-    "clipboardWrite" // For copy
+    "activeTab",
+    "clipboardWrite"
   ],
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
 
-  // Recommended
   "description": "Shorter links",
 
-  // Optional
   "author": "Andrew Flynn (https://github.com/andrewflynn)"
 }
