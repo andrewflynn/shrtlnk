@@ -1,3 +1,4 @@
+// Amazon
 QUnit.test("Amazon https", function(assert) {
   assert.equal(shrtn("https://www.amazon.com/gp/product/B01A6G35IQ/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1"), "https://amzn.com/B01A6G35IQ", "Passed");
 });
@@ -21,4 +22,10 @@ QUnit.test("Amazon product name first", function(assert) {
 });
 QUnit.test("Amazon product name first 2", function(assert) {
   assert.equal(shrtn("https://www.amazon.com/Apple-iPhone-5S-16GB-Refurbished/dp/B00YD53YQU/ref=lp_12522860011_1_1?s=wireless&ie=UTF8&qid=1468079498&sr=1-1"), "https://amzn.com/B00YD53YQU", "Passed");
+});
+QUnit.test("Amazon product name home page negative match", function(assert) {
+  assert.equal(shrtn("https://amazon.com"), "https://amazon.com", "Passed");
+});
+QUnit.test("Amazon product name My Account negative match", function(assert) {
+  assert.equal(shrtn("https://www.amazon.com/gp/css/homepage.html/ref=nav_youraccount_ya"), "https://www.amazon.com/gp/css/homepage.html/ref=nav_youraccount_ya", "Passed");
 });
