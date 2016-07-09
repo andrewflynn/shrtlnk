@@ -10,10 +10,25 @@ map.set(
     /^http:\/\/(?:www\.)?theonion\.com\/.*?(\d+)$/,
     'http://www.theonion.com/r/$1');
 
+// YouTube with video id then time
+// https://www.youtube.com/watch?v=1cX4t5-YpHQ&t=1m9s
+// IMPORTANT: This needs to be added before the non-time based one below
+//            otherwise that one will match first.
+map.set(
+    /^https:\/\/(?:www\.)?youtube\.com\/watch\?v\=([^\&\n]+).*?&t\=(\w+).*$/,
+    'https://youtu.be/$1?t=$2');
+
+// Simple YouTube with no time
 // https://youtu.be/1cX4t5-YpHQ
 map.set(
-    /^https:\/\/(?:www\.)?youtube\.com\/watch\?v\=([^\&\n]+).*$/,
+    /^https:\/\/(?:www\.)?youtube\.com\/watch\?v\=([^\&]+).*$/,
     'https://youtu.be/$1');
+
+// YouTube with time then video id later
+// https://www.youtube.com/watch?t=1m9s&v=1cX4t5-YpHQ
+map.set(
+    /^https:\/\/(?:www\.)?youtube\.com\/watch\?t\=(\w+).*?v\=([^\&]+).*$/,
+    'https://youtu.be/$2?t=$1');
 
 function shrtn(str) {
   for (var [k, v] of map) {

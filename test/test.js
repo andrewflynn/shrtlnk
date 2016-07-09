@@ -66,6 +66,21 @@ t("YouTube simple",
 t("YouTube with arg",
     "https://www.youtube.com/watch?v=1cX4t5-YpHQ&feature=youtu.be",
     "https://youtu.be/1cX4t5-YpHQ");
+t("YouTube simple time",
+    "https://www.youtube.com/watch?v=1cX4t5-YpHQ&t=1m9s",
+    "https://youtu.be/1cX4t5-YpHQ?t=1m9s");
 t("YouTube multiple args",
-    "https://www.youtube.com/watch?v=1cX4t5-YpHQ&feature=youtu.be&t=1s",
-    "https://youtu.be/1cX4t5-YpHQ");
+    "https://www.youtube.com/watch?v=1cX4t5-YpHQ&feature=youtu.be&t=1m9s",
+    "https://youtu.be/1cX4t5-YpHQ?t=1m9s");
+t("YouTube multiple args time first",
+    "https://www.youtube.com/watch?v=1cX4t5-YpHQ&t=1m9s&feature=youtu.be",
+    "https://youtu.be/1cX4t5-YpHQ?t=1m9s");
+t("YouTube time before video id",
+    "https://www.youtube.com/watch?t=1m9s&v=1cX4t5-YpHQ",
+    "https://youtu.be/1cX4t5-YpHQ?t=1m9s");
+t("YouTube time before video id with arg",
+    "https://www.youtube.com/watch?t=1m9s&v=1cX4t5-YpHQ&feature=youtu.be",
+    "https://youtu.be/1cX4t5-YpHQ?t=1m9s");
+t("YouTube time before video id",
+    "https://www.youtube.com/watch?t=1m9s&feature=youtu.be&v=1cX4t5-YpHQ",
+    "https://youtu.be/1cX4t5-YpHQ?t=1m9s");
