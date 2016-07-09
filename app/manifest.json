@@ -4,7 +4,8 @@
   "name": "shrtlnk",
   "version": "0.1",
   "permissions": [
-    "activeTab" // https://developer.chrome.com/extensions/activeTab
+    "activeTab", // https://developer.chrome.com/extensions/activeTab
+    "clipboardWrite" // For copy
   ],
   "browser_action": {
     "default_icon": "icon.png",

@@ -28,12 +28,40 @@ function getCurrentTabUrl(callback) {
   });
 }
 
-function renderStatus(statusText) {
-  document.getElementById('status').textContent = statusText;
+function copyToClipboard(status) {
+  // Copy to clipboard
+  // https://developers.google.com/web/updates/2015/04/cut-and-copy-commands
+  var range = document.createRange();
+  range.selectNode(status);
+  window.getSelection().addRange(range);
+
+  try {
+    // Now that we've selected the anchor text, execute the copy command
+    var successful = document.execCommand('copy');
+    console.log('Copy email command result: ' + successful);
+  } catch(err) {
+    console.log('Oops, unable to copy');
+  }
+
+  // Remove the selections - NOTE: Should use
+  // removeRange(range) when it is supported
+  window.getSelection().removeAllRanges();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
   getCurrentTabUrl(function(url) {
-    renderStatus(shrtn(url));
+    // Shorten
+    var shrtnd = shrtn(url);
+
+    // Doc element we both set as the shortened verison and use for copy
+    var status = document.getElementById('status');
+
+    // Show text that was copied
+    // Has to happen before copyToClipboard() because copyToClipboard()
+    // uses the 'status' doc element for copying
+    status.textContent = shrtnd;
+
+    // Copy to clibpoard
+    copyToClipboard(status);
   });
 });
