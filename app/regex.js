@@ -10,6 +10,11 @@ map.set(
     /^http:\/\/(?:www\.)?theonion\.com\/.*?(\d+)$/,
     'http://www.theonion.com/r/$1');
 
+// https://youtu.be/1cX4t5-YpHQ
+map.set(
+    /^https:\/\/(?:www\.)?youtube\.com\/watch\?v\=([^\&\n]+).*$/,
+    'https://youtu.be/$1');
+
 function shrtn(str) {
   for (var [k, v] of map) {
     if (k.test(str)) {

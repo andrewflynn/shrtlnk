@@ -46,3 +46,20 @@ QUnit.test("The Onion american voices", function(assert) {
 QUnit.test("The Onion video", function(assert) {
   assert.equal(shrtn("http://www.theonion.com/video/onion-reviews-independence-day-resurgence-53146"), "http://www.theonion.com/r/53146");
 });
+
+// YouTube
+QUnit.test("YouTube home page negative match", function(assert) {
+  assert.equal(shrtn("https://www.youtube.com/"), "https://www.youtube.com/");
+});
+QUnit.test("YouTube History negative match", function(assert) {
+  assert.equal(shrtn("https://www.youtube.com/feed/history"), "https://www.youtube.com/feed/history");
+});
+QUnit.test("YouTube simple", function(assert) {
+  assert.equal(shrtn("https://www.youtube.com/watch?v=1cX4t5-YpHQ"), "https://youtu.be/1cX4t5-YpHQ");
+});
+QUnit.test("YouTube with arg", function(assert) {
+  assert.equal(shrtn("https://www.youtube.com/watch?v=1cX4t5-YpHQ&feature=youtu.be"), "https://youtu.be/1cX4t5-YpHQ");
+});
+QUnit.test("YouTube multiple args", function(assert) {
+  assert.equal(shrtn("https://www.youtube.com/watch?v=1cX4t5-YpHQ&feature=youtu.be&t=1s"), "https://youtu.be/1cX4t5-YpHQ");
+});
