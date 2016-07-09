@@ -12,7 +12,7 @@ map.set(
 
 // YouTube with video id then time
 // https://www.youtube.com/watch?v=1cX4t5-YpHQ&t=1m9s
-// IMPORTANT: This needs to be added before the non-time based one below
+// NOTE: This needs to be added before the non-time based one below
 //            otherwise that one will match first.
 map.set(
     /^https:\/\/(?:www\.)?youtube\.com\/watch\?v\=([^\&\n]+).*?&t\=(\w+).*$/,
@@ -32,6 +32,8 @@ map.set(
 
 // StackOverflow (answer)
 // http://stackoverflow.com/a/5718765
+// NOTE: (answer) needs to be added before (question) otherwise that one will
+//       match first.
 // NOTE: Ignores the final tag which is the user (who is logged in) tag
 //       that is used by SO, but we don't care about
 map.set(
@@ -43,6 +45,22 @@ map.set(
 map.set(
     /^http:\/\/(?:www\.)?stackoverflow\.com\/.*?(\d+).*$/,
     'http://stackoverflow.com/q/$1');
+
+// StackExchange (answer)
+// http://stackoverflow.com/a/164197
+// NOTE: (answer) needs to be added before (question) otherwise that one will
+//       match first.
+// NOTE: Ignores the final tag which is the user (who is logged in) tag
+//       that is used by SO, but we don't care about
+map.set(
+    /^http:\/\/(?:www\.)?(.*?stackexchange)\.com\/.*?(?:\d+)\/.*?(?:\d+)\#(\d+).*$/,
+    'http://$1.com/a/$2');
+
+// StackOverflow (question)
+// http://stackoverflow.com/q/164194
+map.set(
+    /^http:\/\/(?:www\.)?(.*?stackexchange)\.com\/.*?(\d+).*$/,
+    'http://$1.com/q/$2');
 
 function shrtn(str) {
   for (var [k, v] of map) {

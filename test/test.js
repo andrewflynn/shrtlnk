@@ -86,7 +86,7 @@ t("YouTube time before video id",
     "https://youtu.be/1cX4t5-YpHQ?t=1m9s");
 
 // StackOverflow
-t("Stack Overflow simple",
+t("Stack Overflow simple question",
     "http://stackoverflow.com/questions/5718624/ontouchevent-never-called-mapactivity",
     "http://stackoverflow.com/q/5718624");
 t("Stack Overflow simple answer",
@@ -104,3 +104,20 @@ t("Stack Overflow home page negative match",
 t("Stack Overflow tag negative match",
     "http://stackoverflow.com/questions/tagged/android",
     "http://stackoverflow.com/questions/tagged/android");
+
+// Generic StackExchange
+t("Stack Exchange simple question",
+    "http://boardgames.stackexchange.com/questions/24136/what-algorithm-does-better-settlers-use",
+    "http://boardgames.stackexchange.com/q/24136");
+t("Stack Exchange simple answer",
+    "http://boardgames.stackexchange.com/questions/24136/what-algorithm-does-better-settlers-use/24138#24138",
+    "http://boardgames.stackexchange.com/a/24138");
+t("Stack Exchange simple answer missing anchor, ignore answer arg",
+    "http://boardgames.stackexchange.com/questions/24136/what-algorithm-does-better-settlers-use/24138",
+    "http://boardgames.stackexchange.com/q/24136");
+t("Stack Exchange home page negative match",
+    "http://boardgames.stackexchange.com/",
+    "http://boardgames.stackexchange.com/");
+t("Stack Exchange tag negative match",
+    "http://boardgames.stackexchange.com/questions/tagged/catan",
+    "http://boardgames.stackexchange.com/questions/tagged/catan");
