@@ -31,3 +31,18 @@ QUnit.test("Amazon product name My Account negative match", function(assert) {
 });
 
 // The Onion
+QUnit.test("The Onion home page negative match", function(assert) {
+  assert.equal(shrtn("http://www.theonion.com/"), "http://www.theonion.com/");
+});
+QUnit.test("The Onion collection negative match", function(assert) {
+  assert.equal(shrtn("http://www.theonion.com/election-2016/"), "http://www.theonion.com/election-2016/");
+});
+QUnit.test("The Onion article", function(assert) {
+  assert.equal(shrtn("http://www.theonion.com/article/teen-had-absolutely-no-say-becoming-part-snapchat--53187"), "http://www.theonion.com/r/53187");
+});
+QUnit.test("The Onion american voices", function(assert) {
+  assert.equal(shrtn("http://www.theonion.com/americanvoices/teens-continuing-elude-retailers-53185"), "http://www.theonion.com/r/53185");
+});
+QUnit.test("The Onion video", function(assert) {
+  assert.equal(shrtn("http://www.theonion.com/video/onion-reviews-independence-day-resurgence-53146"), "http://www.theonion.com/r/53146");
+});
