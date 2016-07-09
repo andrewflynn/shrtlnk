@@ -84,3 +84,23 @@ t("YouTube time before video id with arg",
 t("YouTube time before video id",
     "https://www.youtube.com/watch?t=1m9s&feature=youtu.be&v=1cX4t5-YpHQ",
     "https://youtu.be/1cX4t5-YpHQ?t=1m9s");
+
+// StackOverflow
+t("Stack Overflow simple",
+    "http://stackoverflow.com/questions/5718624/ontouchevent-never-called-mapactivity",
+    "http://stackoverflow.com/q/5718624");
+t("Stack Overflow simple answer",
+    "http://stackoverflow.com/questions/5718624/ontouchevent-never-called-mapactivity/5718765#5718765",
+    "http://stackoverflow.com/a/5718765");
+t("Stack Overflow simple answer 2",
+    "http://stackoverflow.com/questions/5718624/ontouchevent-never-called-mapactivity/5720318#5720318",
+    "http://stackoverflow.com/a/5720318");
+t("Stack Overflow simple answer missing anchor, ignore answer arg",
+    "http://stackoverflow.com/questions/5718624/ontouchevent-never-called-mapactivity/5720318",
+    "http://stackoverflow.com/q/5718624");
+t("Stack Overflow home page negative match",
+    "http://stackoverflow.com/",
+    "http://stackoverflow.com/");
+t("Stack Overflow tag negative match",
+    "http://stackoverflow.com/questions/tagged/android",
+    "http://stackoverflow.com/questions/tagged/android");

@@ -30,6 +30,20 @@ map.set(
     /^https:\/\/(?:www\.)?youtube\.com\/watch\?t\=(\w+).*?v\=([^\&]+).*$/,
     'https://youtu.be/$2?t=$1');
 
+// StackOverflow (answer)
+// http://stackoverflow.com/a/5718765
+// NOTE: Ignores the final tag which is the user (who is logged in) tag
+//       that is used by SO, but we don't care about
+map.set(
+    /^http:\/\/(?:www\.)?stackoverflow\.com\/.*?(?:\d+)\/.*?(?:\d+)\#(\d+).*$/,
+    'http://stackoverflow.com/a/$1');
+
+// StackOverflow (question)
+// http://stackoverflow.com/q/5718624
+map.set(
+    /^http:\/\/(?:www\.)?stackoverflow\.com\/.*?(\d+).*$/,
+    'http://stackoverflow.com/q/$1');
+
 function shrtn(str) {
   for (var [k, v] of map) {
     if (k.test(str)) {
