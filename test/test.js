@@ -5,6 +5,7 @@ function t(name, long, short) {
 }
 
 // Amazon
+QUnit.module("Amazon");
 t("Amazon https",
     "https://www.amazon.com/gp/product/B01A6G35IQ/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1",
     "https://amzn.com/B01A6G35IQ");
@@ -37,6 +38,7 @@ t("Amazon product name My Account negative match",
     "https://www.amazon.com/gp/css/homepage.html/ref=nav_youraccount_ya");
 
 // The Onion
+QUnit.module("The Onion");
 t("The Onion home page negative match",
     "http://www.theonion.com/",
     "http://www.theonion.com/");
@@ -54,6 +56,7 @@ t("The Onion video",
     "http://www.theonion.com/r/53146");
 
 // YouTube
+QUnit.module("YouTube");
 t("YouTube home page negative match",
     "https://www.youtube.com/",
     "https://www.youtube.com/");
@@ -86,6 +89,7 @@ t("YouTube time before video id",
     "https://youtu.be/1cX4t5-YpHQ?t=1m9s");
 
 // StackOverflow
+QUnit.module("Stack Overflow");
 t("Stack Overflow simple question",
     "http://stackoverflow.com/questions/5718624/ontouchevent-never-called-mapactivity",
     "http://stackoverflow.com/q/5718624");
@@ -106,6 +110,7 @@ t("Stack Overflow tag negative match",
     "http://stackoverflow.com/questions/tagged/android");
 
 // Generic StackExchange
+QUnit.module("Stack Exchange");
 t("Stack Exchange simple question",
     "http://boardgames.stackexchange.com/questions/24136/what-algorithm-does-better-settlers-use",
     "http://boardgames.stackexchange.com/q/24136");
