@@ -90,6 +90,12 @@ map.set(
   /^https:\/\/(?:www\.)?chrome\.google\.com\/webstore\/detail\/shrtlnk\/nccahogoimgbhghcjmghidnnngigcagi.*$/,
   'http://bit.ly/shrt_lnk');
 
+// Instagram
+// http://instagr.am/
+map.set(
+  /^https:\/\/(?:www\.)?instagram\.com\/([^\?]+).*$/,
+  'http://instagr.am/$1');
+
 function shrtn(str) {
   for (var [k, v] of map) {
     if (k.test(str)) {

@@ -201,3 +201,15 @@ t("shrtlnk simple",
 t("shrtlnk args",
     "https://chrome.google.com/webstore/detail/shrtlnk/nccahogoimgbhghcjmghidnnngigcagi?utm_source=gmail",
     "http://bit.ly/shrt_lnk");
+
+// Instagram
+QUnit.module("Instagram")
+t("Instagram direct pic",
+    "https://www.instagram.com/p/BF4Z-P0LN3h/",
+    "http://instagr.am/p/BF4Z-P0LN3h/");
+t("Instagram profile",
+    "https://www.instagram.com/ueliflynn/",
+    "http://instagr.am/ueliflynn/");
+t("Instagram direct pic with args",
+    "https://www.instagram.com/p/BF4Z-P0LN3h/?taken-by=ueliflynn",
+    "http://instagr.am/p/BF4Z-P0LN3h/");
