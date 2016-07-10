@@ -48,20 +48,42 @@ function copyToClipboard(status) {
   window.getSelection().removeAllRanges();
 }
 
+function finish(shrtlnk) {
+  // Doc element we both set as the shortened verison and use for copy
+  var status = document.getElementById('status');
+
+  // Show text that was copied
+  // Has to happen before copyToClipboard() because copyToClipboard()
+  // uses the 'status' doc element for copying
+  status.textContent = shrtlnk;
+
+  // Copy to clibpoard
+  copyToClipboard(status);
+}
+
+function nytimes(url) {
+  chrome.tabs.executeScript(null, {file: 'nytimes.js' }, function(results) {
+    // We don't specify allFrames so results is always 1 length
+    console.assert(results.length == 1,
+        "We should never receive multiple results");
+    var result = results[0];
+    if (result) {
+      finish(result);
+    } else {
+      finish(url);
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   getCurrentTabUrl(function(url) {
-    // Shorten
-    var shrtnd = shrtn(url);
-
-    // Doc element we both set as the shortened verison and use for copy
-    var status = document.getElementById('status');
-
-    // Show text that was copied
-    // Has to happen before copyToClipboard() because copyToClipboard()
-    // uses the 'status' doc element for copying
-    status.textContent = shrtnd;
-
-    // Copy to clibpoard
-    copyToClipboard(status);
+    // Special case nytimes which doesn' have the short id in the URL, but
+    // rather hidden in the content
+    if (url.startsWith('http://www.nytimes.com')) {
+      nytimes(url);
+    } else {
+      // Shorten
+      finish(shrtn(url));
+    }
   });
 });
