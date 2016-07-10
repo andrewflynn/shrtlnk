@@ -84,6 +84,12 @@ map.set(
   /^https:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*q\=([^&]+).*$/,
   'https://www.google.com/search?q=$1');
 
+// shrtlnk
+// http://bit.ly/shrt_lnk
+map.set(
+  /^https:\/\/(?:www\.)?chrome\.google\.com\/webstore\/detail\/shrtlnk\/nccahogoimgbhghcjmghidnnngigcagi.*$/,
+  'http://bit.ly/shrt_lnk');
+
 function shrtn(str) {
   for (var [k, v] of map) {
     if (k.test(str)) {

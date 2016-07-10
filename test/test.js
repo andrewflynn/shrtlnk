@@ -192,3 +192,12 @@ t("Google Web Search webhp weird search",
 t("Google Web Search webhp weird search tons of crap",
     "https://www.google.com/webhp?aqs=chrome..69i57j69i60j0l4.2295j0j7&rlz=1C5CHFA_enUS681US688&oq=bettersettlers&q=test+weird+%24%25+stuff+%2F&sourceid=chrome&ie=UTF-8",
     "https://www.google.com/search?q=test+weird+%24%25+stuff+%2F");
+
+// Google Web Search
+QUnit.module("shrtlnk");
+t("shrtlnk simple",
+    "https://chrome.google.com/webstore/detail/shrtlnk/nccahogoimgbhghcjmghidnnngigcagi",
+    "http://bit.ly/shrt_lnk");
+t("shrtlnk args",
+    "https://chrome.google.com/webstore/detail/shrtlnk/nccahogoimgbhghcjmghidnnngigcagi?utm_source=gmail",
+    "http://bit.ly/shrt_lnk");
