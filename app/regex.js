@@ -62,6 +62,28 @@ map.set(
     /^http:\/\/(?:www\.)?(.*?stackexchange)\.com\/.*?(\d+).*$/,
     'http://$1.com/q/$2');
 
+// Google Web Search with type
+// https://google.com/search?q=bettersettlers&tbm=isch
+// NOTE: Search type (eg image, news, video, etc) need to come first, otherwise
+//       generic would match first
+map.set(
+  /^https:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*q\=([^&]+).*\&tbm\=([^&]+).*$/,
+  'https://www.google.com/search?q=$1&tbm=$2');
+
+// Google Web Search with type first
+// https://google.com/search?q=bettersettlers&tbm=isch
+// NOTE: Search type (eg image, news, video, etc) need to come first, otherwise
+//       generic would match first
+map.set(
+  /^https:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*tbm\=([^&]+).*\&q\=([^&]+).*$/,
+  'https://www.google.com/search?q=$2&tbm=$1');
+
+// Google Web Search query only
+// https://google.com/search?q=bettersettlers
+map.set(
+  /^https:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*q\=([^&]+).*$/,
+  'https://www.google.com/search?q=$1');
+
 function shrtn(str) {
   for (var [k, v] of map) {
     if (k.test(str)) {
