@@ -2,7 +2,7 @@
 
 *Creates short links for common websites.*
 
-bit.ly/shrt_lnk (https://chrome.google.com/webstore/detail/shrtlnk/nccahogoimgbhghcjmghidnnngigcagi)
+http://bit.ly/shrt_lnk (https://chrome.google.com/webstore/detail/shrtlnk/nccahogoimgbhghcjmghidnnngigcagi)
 
 e.g. amzn.com/B01A6G35IQ
 
