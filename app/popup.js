@@ -77,7 +77,7 @@ function nytimes(url) {
 
 document.addEventListener('DOMContentLoaded', function() {
   getCurrentTabUrl(function(url) {
-    // Special case nytimes which doesn' have the short id in the URL, but
+    // Special case nytimes which doesn't have the short id in the URL, but
     // rather hidden in the content
     if (url.startsWith('http://www.nytimes.com')) {
       nytimes(url);
