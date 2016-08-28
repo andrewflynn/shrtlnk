@@ -49,16 +49,18 @@ function copyToClipboard(status) {
 }
 
 function finish(shrtlnk) {
-  // Doc element we both set as the shortened verison and use for copy
+  // Doc element we both set as the shortened version and use for copy
   var status = document.getElementById('status');
+  var copy = document.getElementById('copy');
 
   // Show text that was copied
   // Has to happen before copyToClipboard() because copyToClipboard()
   // uses the 'status' doc element for copying
   status.textContent = shrtlnk;
+  copy.textContent = shrtlnk;
 
   // Copy to clibpoard
-  copyToClipboard(status);
+  copyToClipboard(copy);
 }
 
 function nytimes(url) {
