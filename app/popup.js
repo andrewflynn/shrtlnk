@@ -116,8 +116,8 @@ function finish(shrtlnk) {
   copyTextToClipboard(shrtlnk);
 }
 
-function nytimes(url) {
-  chrome.tabs.executeScript(null, {file: 'nytimes.js' }, function(results) {
+function run_script(url, filename) {
+  chrome.tabs.executeScript(null, {file: filename }, function(results) {
     // We don't specify allFrames so results is always 1 length
     console.assert(results.length == 1,
         "We should never receive multiple results");
@@ -135,7 +135,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Special case nytimes which doesn't have the short id in the URL, but
     // rather hidden in the content
     if (url.startsWith('http://www.nytimes.com')) {
-      nytimes(url);
+      run_script(url, 'nytimes.js');
+    } else if (url.startsWith('http://fivethirtyeight.com')) {
+      run_script(url, 'fivethirtyeight.js');
     } else {
       // Shorten
       finish(shrtn(url));
