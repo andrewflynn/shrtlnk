@@ -18,5 +18,7 @@ Instagram | instagram.com | instagr.am/p/[id]
 The Onion | theonion.com | theonion.com/r/[id]
 StackOverflow | stackoverflow.com | stackoverflow.com/[qa]
 StackExchange | *.stackexchange.com | *.stackexchange.com/[qa]
+Five Thirty Eight | fivethirtyeight.com | 53eig.ht/[id]
+Giphy | giphy.com | gph.is/[id]
 
 and more to come. Contributions welcome!
