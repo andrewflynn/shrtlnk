@@ -138,6 +138,8 @@ document.addEventListener('DOMContentLoaded', function() {
       run_script(url, 'nytimes.js');
     } else if (url.startsWith('http://fivethirtyeight.com')) {
       run_script(url, 'fivethirtyeight.js');
+    } else if (url.startsWith('http://giphy.com')) {
+      run_script(url, 'giphy.js');
     } else {
       // Shorten
       finish(shrtn(url));
