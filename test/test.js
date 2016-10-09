@@ -87,6 +87,12 @@ t("YouTube time before video id with arg",
 t("YouTube time before video id",
     "https://www.youtube.com/watch?t=1m9s&feature=youtu.be&v=1cX4t5-YpHQ",
     "https://youtu.be/1cX4t5-YpHQ?t=1m9s");
+t("YouTube long args",
+    "https://www.youtube.com/watch?annotation_id=annotation_884950143&feature=iv&src_vid=LRvEsonVXWA&v=7xC0eD6hlm0",
+    "https://youtu.be/7xC0eD6hlm0")
+t("YouTube simple long args",
+    "https://www.youtube.com/watch?foo=bar&v=1cX4t5-YpHQ",
+    "https://youtu.be/1cX4t5-YpHQ")
 
 // StackOverflow
 QUnit.module("Stack Overflow");

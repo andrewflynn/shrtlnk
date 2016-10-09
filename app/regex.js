@@ -30,6 +30,12 @@ map.set(
     /^https:\/\/(?:www\.)?youtube\.com\/watch\?t\=(\w+).*?v\=([^\&]+).*$/,
     'https://youtu.be/$2?t=$1');
 
+// YouTube with time then video id later
+// https://www.youtube.com/watch?t=1m9s&v=1cX4t5-YpHQ
+map.set(
+    /^https:\/\/(?:www\.)?youtube\.com\/watch\?.*v\=([^\&]+).*$/,
+    'https://youtu.be/$1');
+
 // StackOverflow (answer)
 // http://stackoverflow.com/a/5718765
 // NOTE: (answer) needs to be added before (question) otherwise that one will
