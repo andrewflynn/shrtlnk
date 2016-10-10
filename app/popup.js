@@ -140,6 +140,8 @@ document.addEventListener('DOMContentLoaded', function() {
       run_script(url, 'fivethirtyeight.js');
     } else if (url.startsWith('http://giphy.com')) {
       run_script(url, 'giphy.js');
+    } else if (url.startsWith('https://giphy.com')) {
+      run_script(url, 'giphy.js');  
     } else {
       // Shorten
       finish(shrtn(url));
