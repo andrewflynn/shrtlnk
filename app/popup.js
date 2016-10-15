@@ -130,15 +130,20 @@ function run_script(url, filename) {
   });
 }
 
+function check_site(domain, url) {
+  var re = new RegExp("^http(?:s)?:\/\/(?:www\.)?" + domain);
+  return re.test(url);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   getCurrentTabUrl(function(url) {
     // Special case nytimes which doesn't have the short id in the URL, but
     // rather hidden in the content
-    if (url.startsWith('http://www.nytimes.com')) {
+    if (check_site('nytimes\.com', url)) {
       run_script(url, 'nytimes.js');
-    } else if (url.startsWith('http://fivethirtyeight.com')) {
+    } else if (check_site('fivethirtyeight\.com', url)) {
       run_script(url, 'fivethirtyeight.js');
-    } else if (url.startsWith('http://giphy.com')) {
+    } else if (check_site('giphy\.com', url)) {
       run_script(url, 'giphy.js');
     } else {
       // Shorten
