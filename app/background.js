@@ -1,5 +1,15 @@
-// Only show enabled for whitelisted sites
-function make_rule(domain) {
+function make_equals(domain) {
+  return {
+          conditions: [
+            new chrome.declarativeContent.PageStateMatcher({
+              pageUrl: { hostEquals: domain }
+            })
+          ],
+          actions: [ new chrome.declarativeContent.ShowPageAction() ]
+        };
+}
+
+function make_suffix(domain) {
   return {
           conditions: [
             new chrome.declarativeContent.PageStateMatcher({
@@ -21,16 +31,18 @@ var shrtlnk_rule = {
 
 var rules = [
     shrtlnk_rule,
-    make_rule("amazon.com"),
-    make_rule("theonion.com"),
-    make_rule("youtube.com"),
-    make_rule("stackoverflow.com"),
-    make_rule("stackexchange.com"),
-    make_rule("google.com"),
-    make_rule("instagram.com"),
-    make_rule("nytimes.com"),
-    make_rule("fivethirtyeight.com"),
-    make_rule("giphy.com")
+
+    make_equals("www.amazon.com"),
+    make_equals("www.theonion.com"),
+    make_equals("www.youtube.com"),
+    make_equals("stackoverflow.com"),
+    make_equals("www.google.com"),
+    make_equals("www.instagram.com"),
+    make_equals("www.nytimes.com"),
+    make_equals("fivethirtyeight.com"),
+    make_equals("giphy.com"),
+
+    make_suffix("stackexchange.com")
 ];
 
 chrome.runtime.onInstalled.addListener(function(details) {
