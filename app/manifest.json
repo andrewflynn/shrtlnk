@@ -15,7 +15,10 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["background.js"],
+    "scripts": [
+      "regex.js",
+      "background.js"
+    ],
     "persistent": false
   },
   "icons": {

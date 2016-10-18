@@ -1,49 +1,18 @@
-function make_equals(domain) {
+function make_regex(domain) {
   return {
           conditions: [
             new chrome.declarativeContent.PageStateMatcher({
-              pageUrl: { hostEquals: domain }
+              pageUrl: { urlMatches: domain }
             })
           ],
           actions: [ new chrome.declarativeContent.ShowPageAction() ]
         };
 }
 
-function make_suffix(domain) {
-  return {
-          conditions: [
-            new chrome.declarativeContent.PageStateMatcher({
-              pageUrl: { hostSuffix: domain }
-            })
-          ],
-          actions: [ new chrome.declarativeContent.ShowPageAction() ]
-        };
-}
-
-var shrtlnk_rule = {
-        conditions: [
-          new chrome.declarativeContent.PageStateMatcher({
-            pageUrl: { urlEquals: "https://chrome.google.com/webstore/detail/shrtlnk/nccahogoimgbhghcjmghidnnngigcagi" }
-          })
-        ],
-        actions: [ new chrome.declarativeContent.ShowPageAction() ]
-      };
-
-var rules = [
-    shrtlnk_rule,
-
-    make_equals("www.amazon.com"),
-    make_equals("www.theonion.com"),
-    make_equals("www.youtube.com"),
-    make_equals("stackoverflow.com"),
-    make_equals("www.google.com"),
-    make_equals("www.instagram.com"),
-    make_equals("www.nytimes.com"),
-    make_equals("fivethirtyeight.com"),
-    make_equals("giphy.com"),
-
-    make_suffix("stackexchange.com")
-];
+var rules = [];
+regex_list.forEach(function (item, index, array) {
+  rules.push(make_regex(item));
+});
 
 chrome.runtime.onInstalled.addListener(function(details) {
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
