@@ -107,7 +107,7 @@ var custom_short_list = [];
 
 custom_regex_list.push(/^http(?:s)?:\/\/(?:www\.)?nytimes\.com.*$/);
 custom_short_list.push('nytimes.js');
-custom_regex_list.push(/^http(?:s)?:\/\/(?:www\.)?fivethirtyeight\.com.*$/);
+custom_regex_list.push(/^http(?:s)?:\/\/(?:\w)+?\.?fivethirtyeight\.com.*$/);
 custom_short_list.push('fivethirtyeight.js');
 custom_regex_list.push(/^http(?:s)?:\/\/(?:www\.)?giphy\.com.*$/);
 custom_short_list.push('giphy.js');
