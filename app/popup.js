@@ -137,17 +137,15 @@ function check_site(domain, url) {
 
 document.addEventListener('DOMContentLoaded', function() {
   getCurrentTabUrl(function(url) {
-    // Special case nytimes which doesn't have the short id in the URL, but
+    // Special case some sites which doesn't have the short id in the URL, but
     // rather hidden in the content
-    if (check_site('nytimes\.com', url)) {
-      run_script(url, 'nytimes.js');
-    } else if (check_site('fivethirtyeight\.com', url)) {
-      run_script(url, 'fivethirtyeight.js');
-    } else if (check_site('giphy\.com', url)) {
-      run_script(url, 'giphy.js');
-    } else {
-      // Shorten
-      finish(shrtn(url));
+    for (var i = 0; i < custom_regex_list.length; i++) {
+      if (custom_regex_list[i].test(url)) {
+        run_script(url, custom_short_list[i]);
+        return;
+      }
     }
+    // Else
+    finish(shrtn(url));
   });
 });

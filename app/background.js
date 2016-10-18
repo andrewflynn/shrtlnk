@@ -13,6 +13,9 @@ var rules = [];
 regex_list.forEach(function (item, index, array) {
   rules.push(make_regex(item));
 });
+custom_regex_list.forEach(function (item, index, array) {
+  rules.push(make_regex(item));
+});
 
 chrome.runtime.onInstalled.addListener(function(details) {
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
