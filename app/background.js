@@ -11,10 +11,10 @@ function make_regex(domain) {
 
 var rules = [];
 regex_list.forEach(function (item, index, array) {
-  rules.push(make_regex(item));
+  rules.push(make_regex(item.source));
 });
 custom_regex_list.forEach(function (item, index, array) {
-  rules.push(make_regex(item));
+  rules.push(make_regex(item.source));
 });
 
 chrome.runtime.onInstalled.addListener(function(details) {

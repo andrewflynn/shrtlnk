@@ -130,11 +130,6 @@ function run_script(url, filename) {
   });
 }
 
-function check_site(domain, url) {
-  var re = new RegExp("^http(?:s)?:\/\/(?:www\.)?" + domain);
-  return re.test(url);
-}
-
 document.addEventListener('DOMContentLoaded', function() {
   getCurrentTabUrl(function(url) {
     // Special case some sites which doesn't have the short id in the URL, but
