@@ -112,6 +112,12 @@ test_positive("Amazon product name first",
 test_positive("Amazon product name first 2",
     "https://www.amazon.com/Apple-iPhone-5S-16GB-Refurbished/dp/B00YD53YQU/ref=lp_12522860011_1_1?s=wireless&ie=UTF8&qid=1468079498&sr=1-1",
     "https://amzn.com/B00YD53YQU");
+test_positive("Amazon non-com",
+    "https://www.amazon.de/Fallen-Tree-Games-Quell-Zen/dp/B01H5K7KHI",
+    "https://amzn.com/B01H5K7KHI");
+test_positive("Amazon multi dot non-com",
+    "https://www.amazon.co.uk/Fallen-Tree-Games-Quell-Zen/dp/B01H5K7KHI",
+    "https://amzn.com/B01H5K7KHI");
 test_negative("Amazon product name home page negative match",
     "https://amazon.com");
 test_negative("Amazon product name My Account negative match",

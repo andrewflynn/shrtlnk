@@ -18,7 +18,7 @@ function add(short, regex, filter_regex) {
 
 // amazon: https://amzn.com/B01A6G35IQ
 add('https://amzn.com/$1',
-    /^https?:\/\/(?:www\.)?amazon\.com\/[\w\/-]*(B\w{9}).*$/);
+    /^https?:\/\/(?:www\.)?amazon\.[\w\.]+\/[\w\/-]*(B\w{9}).*$/);
 
 // http://www.theonion.com/r/53187
 add('http://www.theonion.com/r/$1',
