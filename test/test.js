@@ -140,67 +140,91 @@ t("Google Web Search home page negative match",
     "https://www.google.com/");
 t("Google Web Search simple",
     "https://www.google.com/search?q=bettersettlers",
-    "https://www.google.com/search?q=bettersettlers");
+    "https://www.google.com/#q=bettersettlers");
+t("Google Web Search simple match",
+    "https://www.google.com/#q=bettersettlers",
+    "https://www.google.com/#q=bettersettlers");
 t("Google Web Search simple type",
     "https://www.google.com/search?q=bettersettlers&tbm=vid",
-    "https://www.google.com/search?q=bettersettlers&tbm=vid");
+    "https://www.google.com/#q=bettersettlers&tbm=vid");
+t("Google Web Search simple type match",
+    "https://www.google.com/#q=bettersettlers&tbm=vid",
+    "https://www.google.com/#q=bettersettlers&tbm=vid");
 t("Google Web Search simple type reverse",
     "https://www.google.com/search?tbm=vid&q=bettersettlers",
-    "https://www.google.com/search?q=bettersettlers&tbm=vid");
+    "https://www.google.com/#q=bettersettlers&tbm=vid");
+t("Google Web Search simple type reverse match",
+    "https://www.google.com/#tbm=vid&q=bettersettlers",
+    "https://www.google.com/#q=bettersettlers&tbm=vid");
 t("Google Web Search misleading search terms",
     "https://www.google.com/search?q=WRONGbettersettlers&tbm=WRONGvid#q=bettersettlers&tbm=shop",
-    "https://www.google.com/search?q=bettersettlers&tbm=shop");
+    "https://www.google.com/#q=bettersettlers&tbm=shop");
+t("Google Web Search misleading search terms match",
+    "https://www.google.com/#q=WRONGbettersettlers&tbm=WRONGvid#q=bettersettlers&tbm=shop",
+    "https://www.google.com/#q=bettersettlers&tbm=shop");
 t("Google Web Search misleading search terms reverse",
     "https://www.google.com/search?tbm=WRONGvid&q=WRONGbettersettlers#tbm=isch&q=bettersettlers",
-    "https://www.google.com/search?q=bettersettlers&tbm=isch");
+    "https://www.google.com/#q=bettersettlers&tbm=isch");
+t("Google Web Search misleading search terms reverse",
+    "https://www.google.com/#tbm=WRONGvid&q=WRONGbettersettlers#tbm=isch&q=bettersettlers",
+    "https://www.google.com/#q=bettersettlers&tbm=isch");
 t("Google Web Search tons of crap",
     "https://www.google.com/search?q=bettersettlers&rlz=1C5CHFA_enUS681US688&oq=bettersettlers&aqs=chrome..69i57j69i60j0l4.2295j0j7&sourceid=chrome&ie=UTF-8",
-    "https://www.google.com/search?q=bettersettlers");
+    "https://www.google.com/#q=bettersettlers");
+t("Google Web Search tons of crap match",
+    "https://www.google.com/#q=bettersettlers&rlz=1C5CHFA_enUS681US688&oq=bettersettlers&aqs=chrome..69i57j69i60j0l4.2295j0j7&sourceid=chrome&ie=UTF-8",
+    "https://www.google.com/#q=bettersettlers");
 t("Google Web Search weird search",
     "https://www.google.com/search?q=test+weird+%24%25+stuff+%2F",
-    "https://www.google.com/search?q=test+weird+%24%25+stuff+%2F");
+    "https://www.google.com/#q=test+weird+%24%25+stuff+%2F");
+t("Google Web Search weird search match",
+    "https://www.google.com/#q=test+weird+%24%25+stuff+%2F",
+    "https://www.google.com/#q=test+weird+%24%25+stuff+%2F");
 t("Google Web Search weird search tons of crap",
     "https://www.google.com/search?aqs=chrome..69i57j69i60j0l4.2295j0j7&rlz=1C5CHFA_enUS681US688&oq=bettersettlers&q=test+weird+%24%25+stuff+%2F&sourceid=chrome&ie=UTF-8",
-    "https://www.google.com/search?q=test+weird+%24%25+stuff+%2F");
+    "https://www.google.com/#q=test+weird+%24%25+stuff+%2F");
+t("Google Web Search weird search tons of crap match",
+    "https://www.google.com/#aqs=chrome..69i57j69i60j0l4.2295j0j7&rlz=1C5CHFA_enUS681US688&oq=bettersettlers&q=test+weird+%24%25+stuff+%2F&sourceid=chrome&ie=UTF-8",
+    "https://www.google.com/#q=test+weird+%24%25+stuff+%2F");
 t("Google Web Search no page",
     "https://www.google.com/?gws_rd=ssl#q=bettersettlers",
-    "https://www.google.com/search?q=bettersettlers");
+    "https://www.google.com/#q=bettersettlers");
 t("Google Web Search no page simple type",
     "https://www.google.com/?gws_rd=ssl#q=bettersettlers&tbm=vid",
-    "https://www.google.com/search?q=bettersettlers&tbm=vid");
+    "https://www.google.com/#q=bettersettlers&tbm=vid");
 t("Google Web Search no page simple type reverse",
     "https://www.google.com/?gws_rd=ssl#tbm=vid&q=bettersettlers",
-    "https://www.google.com/search?q=bettersettlers&tbm=vid");
+    "https://www.google.com/#q=bettersettlers&tbm=vid");
 t("Google Web Search no page weird search",
     "https://www.google.com/?gws_rd=ssl#q=test+weird+%24%25+stuff+%2F",
-    "https://www.google.com/search?q=test+weird+%24%25+stuff+%2F");
+    "https://www.google.com/#q=test+weird+%24%25+stuff+%2F");
 t("Google Web Search webhp simple",
     "https://www.google.com/webhp?q=bettersettlers",
-    "https://www.google.com/search?q=bettersettlers");
+    "https://www.google.com/#q=bettersettlers");
 t("Google Web Search webhp simple type",
     "https://www.google.com/webhp?q=bettersettlers&tbm=vid",
-    "https://www.google.com/search?q=bettersettlers&tbm=vid");
+    "https://www.google.com/#q=bettersettlers&tbm=vid");
 t("Google Web Search webhp simple type reverse",
     "https://www.google.com/webhp?tbm=vid&q=bettersettlers",
-    "https://www.google.com/search?q=bettersettlers&tbm=vid");
+    "https://www.google.com/#q=bettersettlers&tbm=vid");
 t("Google Web Search webhp misleading search terms",
     "https://www.google.com/webhp?q=WRONGbettersettlers&tbm=WRONGvid#q=bettersettlers&tbm=shop",
-    "https://www.google.com/search?q=bettersettlers&tbm=shop");
+    "https://www.google.com/#q=bettersettlers&tbm=shop");
 t("Google Web Search webhp misleading search terms reverse",
     "https://www.google.com/webhp?tbm=WRONGvid&q=WRONGbettersettlers#tbm=isch&q=bettersettlers",
-    "https://www.google.com/search?q=bettersettlers&tbm=isch");
+    "https://www.google.com/#q=bettersettlers&tbm=isch");
 t("Google Web Search webhp tons of crap",
     "https://www.google.com/webhp?q=bettersettlers&rlz=1C5CHFA_enUS681US688&oq=bettersettlers&aqs=chrome..69i57j69i60j0l4.2295j0j7&sourceid=chrome&ie=UTF-8",
-    "https://www.google.com/search?q=bettersettlers");
+    "https://www.google.com/#q=bettersettlers");
 t("Google Web Search webhp weird search",
     "https://www.google.com/webhp?q=test+weird+%24%25+stuff+%2F",
-    "https://www.google.com/search?q=test+weird+%24%25+stuff+%2F");
+    "https://www.google.com/#q=test+weird+%24%25+stuff+%2F");
 t("Google Web Search webhp weird search tons of crap",
     "https://www.google.com/webhp?aqs=chrome..69i57j69i60j0l4.2295j0j7&rlz=1C5CHFA_enUS681US688&oq=bettersettlers&q=test+weird+%24%25+stuff+%2F&sourceid=chrome&ie=UTF-8",
-    "https://www.google.com/search?q=test+weird+%24%25+stuff+%2F");
+    "https://www.google.com/#q=test+weird+%24%25+stuff+%2F");
 t("Google Web Search New 1",
     "https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=chihuahua%20blueberry%20muffin%20meme",
-    "https://www.google.com/search?q=chihuahua%20blueberry%20muffin%20meme");
+    "https://www.google.com/#q=chihuahua%20blueberry%20muffin%20meme");
 
 // Google Web Search
 QUnit.module("shrtlnk");

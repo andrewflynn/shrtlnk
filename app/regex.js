@@ -79,7 +79,7 @@ add('http://$1.com/q/$2',
 // https://google.com/search?q=bettersettlers&tbm=isch
 // NOTE: Search type (eg image, news, video, etc) need to come first, otherwise
 //       generic would match first
-add('https://www.google.com/search?q=$1&tbm=$2',
+add('https://www.google.com/#q=$1&tbm=$2',
     /^https?:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*q\=([^&]+).*\&tbm\=([^&]+).*$/,
     /^https?:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*/);
 
@@ -87,13 +87,13 @@ add('https://www.google.com/search?q=$1&tbm=$2',
 // https://google.com/search?q=bettersettlers&tbm=isch
 // NOTE: Search type (eg image, news, video, etc) need to come first, otherwise
 //       generic would match first
-add('https://www.google.com/search?q=$2&tbm=$1',
+add('https://www.google.com/#q=$2&tbm=$1',
     /^https?:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*tbm\=([^&]+).*\&q\=([^&]+).*$/,
     /^https?:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*/);
 
 // Google Web Search query only
-// https://google.com/search?q=bettersettlers
-add('https://www.google.com/search?q=$1',
+// https://google.com/#q=bettersettlers
+add('https://www.google.com/#q=$1',
     /^https?:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*q\=([^&]+).*$/,
     /^https?:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*/);
 
