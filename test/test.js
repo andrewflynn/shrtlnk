@@ -198,6 +198,9 @@ t("Google Web Search webhp weird search",
 t("Google Web Search webhp weird search tons of crap",
     "https://www.google.com/webhp?aqs=chrome..69i57j69i60j0l4.2295j0j7&rlz=1C5CHFA_enUS681US688&oq=bettersettlers&q=test+weird+%24%25+stuff+%2F&sourceid=chrome&ie=UTF-8",
     "https://www.google.com/search?q=test+weird+%24%25+stuff+%2F");
+t("Google Web Search New 1",
+    "https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=chihuahua%20blueberry%20muffin%20meme",
+    "https://www.google.com/search?q=chihuahua%20blueberry%20muffin%20meme");
 
 // Google Web Search
 QUnit.module("shrtlnk");
