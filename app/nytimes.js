@@ -11,4 +11,13 @@ if (shorturlspans.length == 1) {
 
   // Evaluate the URL so it's returned in the callback
   shorturlspan.childNodes[0].innerText;
+} else {
+  // Attempt #2 for videos
+  // <div id="sharetools-video"
+  //   ...
+  //   data-url="http://www.nytimes.com/video/opinion/100000004720973/bad-hombres-nasty-women-the-presidential-debate-in-song.html"
+  //   data-tinyurl="http://nyti.ms/2eqOECy"
+  //   ...
+  // >
+  document.getElementById("sharetools-video").getAttribute("data-tinyurl");
 }
