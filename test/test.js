@@ -118,6 +118,9 @@ test_positive("Amazon non-com",
 test_positive("Amazon multi dot non-com",
     "https://www.amazon.co.uk/Fallen-Tree-Games-Quell-Zen/dp/B01H5K7KHI",
     "https://amzn.com/B01H5K7KHI");
+test_positive("Amazon smile",
+    "https://smile.amazon.com/Etekcity-Ultralight-Portable-Backpacking-Ignition/dp/B00B4FY8YO?ie=UTF8&*Version*=1&*entries*=0",
+    "https://amzn.com/B00B4FY8YO");
 test_negative("Amazon product name home page negative match",
     "https://amazon.com");
 test_negative("Amazon product name My Account negative match",
