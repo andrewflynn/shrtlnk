@@ -107,6 +107,11 @@ add('http://bit.ly/shrt_lnk',
 add('http://instagr.am/$1',
     /^https?:\/\/(?:www\.)?instagram\.com\/([^\?]+).*$/);
 
+// Reddit
+// https://redd.it/
+add('https://redd.it/$1',
+    /^https?:\/\/(?:www\.)?reddit\.com\/r\/\w+\/comments\/(\w+)\/.*$/);
+
 function shrtn(str) {
   for (var i = 0; i < regex_list.length; i++) {
     var regex = regex_list[i];

@@ -86,6 +86,14 @@ verify_filter("Giphy http gif",
     "http://giphy.com/gifs/snl-television-weekend-update-jebidiah-atkinson-REhKzEF6q48og",
     true);
 
+QUnit.module("Reddit");
+test_positive("Reddit simple 5 chars",
+    "https://www.reddit.com/r/announcements/comments/eorhm/reddit_30_less_typing/",
+    "https://redd.it/eorhm");
+test_positive("Reddit subreddit 6 chars",
+    "https://www.reddit.com/r/Fallout/comments/4cv407/if_this_mod_doesnt_become_one_of_the_top_10_best/",
+    "https://redd.it/4cv407");
+
 // Amazon
 QUnit.module("Amazon");
 test_positive("Amazon https",
