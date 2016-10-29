@@ -21,5 +21,6 @@ StackExchange | *.stackexchange.com | *.stackexchange.com/[qa]
 Five Thirty Eight | fivethirtyeight.com | 53eig.ht/[id]
 Giphy | giphy.com | gph.is/[id]
 Reddit | reddit.com | redd.it/[id]
+CNN | cnn.com | cnn.it/[id]
 
 and more to come. Contributions welcome!

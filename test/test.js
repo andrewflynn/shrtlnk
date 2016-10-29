@@ -86,6 +86,19 @@ verify_filter("Giphy http gif",
     "http://giphy.com/gifs/snl-television-weekend-update-jebidiah-atkinson-REhKzEF6q48og",
     true);
 
+// CNN
+QUnit.module("CNN");
+verify_filter("CNN Homepage",
+    "http://www.cnn.com/",
+    true);
+verify_filter("CNN Article",
+    "http://www.cnn.com/2016/10/28/politics/fbi-reviewing-new-emails-in-clinton-probe-director-tells-senate-judiciary-committee/index.html",
+    true);
+verify_filter("CNN Landing page",
+    "http://www.cnn.com/election",
+    true);
+
+// Reddit
 QUnit.module("Reddit");
 test_positive("Reddit simple 5 chars",
     "https://www.reddit.com/r/announcements/comments/eorhm/reddit_30_less_typing/",
