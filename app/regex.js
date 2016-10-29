@@ -5,14 +5,15 @@ var filter_regex_list = [];
 var short_list = [];
 
 // filter_regex arg is optional
-function add(short, regex, filter_regex) {
+function add(short, regex) {
   regex_list.push(regex);
-  // If filter_regex wasn't passed, add the normal regex
-  if (typeof filter_regex === 'undefined') {
-    filter_regex_list.push(regex);
-  } else {
-    filter_regex_list.push(filter_regex);
-  }
+  filter_regex_list.push(regex);
+  short_list.push(short);
+}
+
+function add_with_separate_filter_regex(short, regex, filter_regex) {
+  regex_list.push(regex);
+  filter_regex_list.push(filter_regex);
   short_list.push(short);
 }
 
@@ -79,7 +80,7 @@ add('http://$1.com/q/$2',
 // https://google.com/search?q=bettersettlers&tbm=isch
 // NOTE: Search type (eg image, news, video, etc) need to come first, otherwise
 //       generic would match first
-add('https://www.google.com/#q=$1&tbm=$2',
+add_with_separate_filter_regex('https://www.google.com/#q=$1&tbm=$2',
     /^https?:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*q\=([^&]+).*\&tbm\=([^&]+).*$/,
     /^https?:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*/);
 
@@ -87,13 +88,13 @@ add('https://www.google.com/#q=$1&tbm=$2',
 // https://google.com/search?q=bettersettlers&tbm=isch
 // NOTE: Search type (eg image, news, video, etc) need to come first, otherwise
 //       generic would match first
-add('https://www.google.com/#q=$2&tbm=$1',
+add_with_separate_filter_regex('https://www.google.com/#q=$2&tbm=$1',
     /^https?:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*tbm\=([^&]+).*\&q\=([^&]+).*$/,
     /^https?:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*/);
 
 // Google Web Search query only
 // https://google.com/#q=bettersettlers
-add('https://www.google.com/#q=$1',
+add_with_separate_filter_regex('https://www.google.com/#q=$1',
     /^https?:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*q\=([^&]+).*$/,
     /^https?:\/\/(?:www\.)?google\.com\/(?:(?:search)|(?:webhp))?.*/);
 
@@ -128,13 +129,16 @@ function shrtn(str) {
 var custom_regex_list = [];
 var custom_short_list = [];
 
+// Custom custom ones
 custom_regex_list.push(/^https?:\/\/(?:www\.)?nytimes\.com.*$/);
 custom_short_list.push('nytimes.js');
-custom_regex_list.push(/^https?:\/\/(?:\w)*?\.?fivethirtyeight\.com.*$/);
-custom_short_list.push('fivethirtyeight.js');
 custom_regex_list.push(/^https?:\/\/(?:www\.)?giphy\.com.*$/);
 custom_short_list.push('giphy.js');
 custom_regex_list.push(/^https?:\/\/(?:www\.)cnn\.com.*$/);
 custom_short_list.push('cnn.js');
 custom_regex_list.push(/^https?:\/\/(?:www\.)zillow\.com.*$/);
 custom_short_list.push('zillow.js');
+
+// Standard custom ones using <link rel='shortlink' href='<url>' />
+custom_regex_list.push(/^https?:\/\/(?:\w)*?\.?fivethirtyeight\.com.*$/);
+custom_short_list.push('shortlink.js');
