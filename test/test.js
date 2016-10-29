@@ -98,7 +98,7 @@ verify_filter("CNN Landing page",
     "http://www.cnn.com/election",
     true);
 
-// zillow
+// Zillow
 QUnit.module("Zillow");
 verify_filter("Zillow Homepage",
     "http://www.zillow.com/",
@@ -112,6 +112,20 @@ verify_filter("Zillow Landing page",
 verify_filter("Zillow long url",
     "http://www.zillow.com/homes/for_sale/56352627_zpid/featured_sort/45.313529,-70.090027,41.939062,-74.418641_rect/7_zm/1_fr/",
     true);
+
+// Flickr
+QUnit.module("Flickr");
+test_positive("Flickr shot in photo reel",
+    "https://www.flickr.com/photos/137471784@N02/30397646322/in/photolist-NdTjQj-MBvvG7-N3e3ZT-LY4Riu-Nj8Tdo-NuE3gX-Mj8at1-MQJRNF-NdhGDQ-NsKb67-MaKfhG-MVjz5e-MRVi6q-LSToNp-N6Q4g6-NnkfiH-NvFLFD-NvzwAr-LSp1YQ-NkHxH7-Ne9rr5-LTAGAh-N9y9iu-MPNPkn-MHKWWH-MQq38X-MqzjQf-MzfMsk-MX36AB-Nsw1Ps-N13Afb-M6CRR4-MVA68S-MFcLph-N8fi1Y-MyrNmZ-MHW4Da-MwxjTG-NnWNmY-NaRDJZ-N1nrcE-N4uXCw-Mj849J-MyXxtn-NvnG36-MxRpCS-MFvPHW-NgvrJw-M6x2cw-M7dJAp",
+    "https://flic.kr/p/Nj8Tdo");
+test_positive("Flickr another shot",
+    "https://www.flickr.com/photos/bees/164677083/in/album-72157594162136485/",
+    "https://flic.kr/p/fy1L4");
+test_positive("Flickr cactus of the day",
+    "https://www.flickr.com/photos/cactusoftheday/22839481607/in/photostream/",
+    "https://flic.kr/p/ANfjaD");
+test_negative("Flickr sets (not a single photo)",
+    "https://www.flickr.com/photos/12037949754@N01/sets/72157594162136485/");
 
 // Reddit
 QUnit.module("Reddit");

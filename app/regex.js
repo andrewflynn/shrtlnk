@@ -3,18 +3,27 @@ var regex_list = [];
 // support fragment identifiers (params after '#')
 var filter_regex_list = [];
 var short_list = [];
+var filter_function_list = [];
 
-// filter_regex arg is optional
 function add(short, regex) {
   regex_list.push(regex);
   filter_regex_list.push(regex);
   short_list.push(short);
+  filter_function_list.push(null);
 }
 
 function add_with_separate_filter_regex(short, regex, filter_regex) {
   regex_list.push(regex);
   filter_regex_list.push(filter_regex);
   short_list.push(short);
+  filter_function_list.push(null);
+}
+
+function add_with_regex_function(short, regex, regex_function) {
+  regex_list.push(regex);
+  filter_regex_list.push(regex);
+  short_list.push(short);
+  filter_function_list.push(regex_function);
 }
 
 // amazon: https://amzn.com/B01A6G35IQ
@@ -113,11 +122,40 @@ add('http://instagr.am/$1',
 add('https://redd.it/$1',
     /^https?:\/\/(?:www\.)?reddit\.com\/r\/\w+\/comments\/(\w+)\/.*$/);
 
+// Flickr
+// https://flic.kr/p/[id]
+function flickr_function(num) {
+  if (typeof num !== 'number') {
+    num = parseInt(num);
+  }
+  var enc = '';
+  var alpha = '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ';
+  var div = num;
+  while (num >= 58) {
+    div = num / 58;
+    var mod = (num - (58 * Math.floor(div)));
+    enc = '' + alpha.substr(mod, 1) + enc;
+    num = Math.floor(div);
+  }
+  return (div) ? '' + alpha.substr(div, 1) + enc : enc;
+}
+
+add_with_regex_function('https://flic.kr/p/$1',
+    /^https?:\/\/[^/]*\bflickr\.com\/(?:photos\/[^/]+\/(\d+)).*$/,
+    flickr_function);
+
 function shrtn(str) {
   for (var i = 0; i < regex_list.length; i++) {
     var regex = regex_list[i];
     var short = short_list[i];
+    var filter = filter_function_list[i];
     if (regex.test(str)) {
+      // See if we have a filter function to run first
+      if (filter != null) {
+        var match = str.match(regex)[1];
+        var filtered = filter(match);
+        return short.replace("$1", filtered);
+      }
       return str.replace(regex, short);
     }
   }
