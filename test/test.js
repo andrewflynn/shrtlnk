@@ -98,6 +98,21 @@ verify_filter("CNN Landing page",
     "http://www.cnn.com/election",
     true);
 
+// zillow
+QUnit.module("Zillow");
+verify_filter("Zillow Homepage",
+    "http://www.zillow.com/",
+    true);
+verify_filter("Zillow home",
+    "http://www.zillow.com/homedetails/46-Eastman-Hill-Rd-Lebanon-NH-03766/112999279_zpid/",
+    true);
+verify_filter("Zillow Landing page",
+    "http://www.zillow.com/homes/",
+    true);
+verify_filter("Zillow long url",
+    "http://www.zillow.com/homes/for_sale/56352627_zpid/featured_sort/45.313529,-70.090027,41.939062,-74.418641_rect/7_zm/1_fr/",
+    true);
+
 // Reddit
 QUnit.module("Reddit");
 test_positive("Reddit simple 5 chars",

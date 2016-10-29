@@ -136,3 +136,5 @@ custom_regex_list.push(/^https?:\/\/(?:www\.)?giphy\.com.*$/);
 custom_short_list.push('giphy.js');
 custom_regex_list.push(/^https?:\/\/(?:www\.)cnn\.com.*$/);
 custom_short_list.push('cnn.js');
+custom_regex_list.push(/^https?:\/\/(?:www\.)zillow\.com.*$/);
+custom_short_list.push('zillow.js');
