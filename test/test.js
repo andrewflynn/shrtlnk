@@ -113,6 +113,42 @@ verify_filter("Zillow long url",
     "http://www.zillow.com/homes/for_sale/56352627_zpid/featured_sort/45.313529,-70.090027,41.939062,-74.418641_rect/7_zm/1_fr/",
     true);
 
+// New Yorker
+QUnit.module("New Yorker");
+verify_filter("New Yorker Homepage",
+    "http://www.newyorker.com/",
+    true);
+verify_filter("New Yorker article",
+    "http://www.newyorker.com/magazine/2016/11/07/yet-more-email-trouble-for-clinton",
+    true);
+verify_filter("New Yorker category",
+    "http://www.newyorker.com/popular?intcid=most-popular",
+    true);
+
+// Fortune
+QUnit.module("Fortune");
+verify_filter("Fortune Homepage",
+    "http://fortune.com/",
+    true);
+verify_filter("Fortune article",
+    "http://fortune.com/2016/10/29/treasury-bonds-market-eurozone-yields/",
+    true);
+verify_filter("Fortune author",
+    "http://fortune.com/author/howard-yu/",
+    true);
+
+// Time
+QUnit.module("Time");
+verify_filter("Time Homepage",
+    "http://time.com/",
+    true);
+verify_filter("Time article",
+    "http://time.com/4550453/hillary-clinton-james-comey-fbi-emails/?xid=homepage",
+    true);
+verify_filter("Time category",
+    "http://time.com/politics/",
+    true);
+
 // Flickr
 QUnit.module("Flickr");
 test_positive("Flickr shot in photo reel",

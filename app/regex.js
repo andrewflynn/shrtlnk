@@ -180,3 +180,9 @@ custom_short_list.push('zillow.js');
 // Standard custom ones using <link rel='shortlink' href='<url>' />
 custom_regex_list.push(/^https?:\/\/(?:\w)*?\.?fivethirtyeight\.com.*$/);
 custom_short_list.push('shortlink.js');
+custom_regex_list.push(/^https?:\/\/(?:\w)*?\.?newyorker\.com.*$/);
+custom_short_list.push('shortlink.js');
+custom_regex_list.push(/^https?:\/\/(?:\w)*?\.?fortune\.com.*$/);
+custom_short_list.push('shortlink.js');
+custom_regex_list.push(/^https?:\/\/(?:\w)*?\.?time\.com.*$/);
+custom_short_list.push('shortlink.js');
