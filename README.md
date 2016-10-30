@@ -20,9 +20,12 @@ Reddit | reddit.com | redd.it/[id]
 CNN | cnn.com | cnn.it/[id]
 Zillow | zillow.com | u.zillow.com/[id]
 The Onion | theonion.com | theonion.com/r/[id]
+Five Thirty Eight | fivethirtyeight.com | 53eig.ht/[id]
+New Yorker | newyorker.com | newyorker.com/?p=[id]
 StackOverflow | stackoverflow.com | stackoverflow.com/[qa]
 StackExchange | *.stackexchange.com | *.stackexchange.com/[qa]
-Five Thirty Eight | fivethirtyeight.com | 53eig.ht/[id]
+Fortune | fortune.com | for.tn/[id]
+Time | time.com | ti.me/[id]
 Giphy | giphy.com | gph.is/[id]
 
 and more to come. Contributions welcome!
