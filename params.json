@@ -1,0 +1,6 @@
+{
+  "name": "Shrtlnk",
+  "tagline": "Shorter links",
+  "body": "# shrtlnk\r\n\r\n*Creates short links for common websites.*\r\n\r\nhttp://bit.ly/shrt_lnk (https://chrome.google.com/webstore/detail/shrtlnk/nccahogoimgbhghcjmghidnnngigcagi)\r\n\r\ne.g. amzn.com/B01A6G35IQ\r\n\r\nSupported sites:\r\n\r\nSite | Full | Short\r\n--- | --- | ---\r\nAmazon | amazon.com | amzn.com/[id]\r\nGoogle Search | google.com | google.com/search?q=[query]\r\nNYTimes | nytimes.com | nyti.ms/[id]\r\nYouTube | youtube.com | youtu.be/[id]]\r\nFlickr | flickr.com | flic.kr/p/[id]\r\nInstagram | instagram.com | instagr.am/p/[id]\r\nReddit | reddit.com | redd.it/[id]\r\nCNN | cnn.com | cnn.it/[id]\r\nZillow | zillow.com | u.zillow.com/[id]\r\nThe Onion | theonion.com | theonion.com/r/[id]\r\nFive Thirty Eight | fivethirtyeight.com | 53eig.ht/[id]\r\nNew Yorker | newyorker.com | newyorker.com/?p=[id]\r\nStackOverflow | stackoverflow.com | stackoverflow.com/[qa]\r\nStackExchange | *.stackexchange.com | *.stackexchange.com/[qa]\r\nFortune | fortune.com | for.tn/[id]\r\nTime | time.com | ti.me/[id]\r\nGiphy | giphy.com | gph.is/[id]\r\n\r\nand more to come. Contributions welcome!\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
